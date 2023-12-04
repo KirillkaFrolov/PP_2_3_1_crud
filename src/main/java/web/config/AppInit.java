@@ -27,6 +27,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected String[] getServletMappings() {
         return new String[]{"/"};
     }
+
     @Override
     public void onStartup(ServletContext aServletContext) throws ServletException {
         super.onStartup(aServletContext);
@@ -45,12 +46,11 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
 
     @Override
     protected Filter[] getServletFilters() {
-            CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
         filter.setEncoding("UTF-8");
         filter.setForceEncoding(true);
-        return new Filter[] { filter };
+        return new Filter[]{filter};
     }
-
 
 
 }
