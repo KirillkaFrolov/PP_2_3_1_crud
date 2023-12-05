@@ -1,6 +1,7 @@
 package web.dao;
 
 import org.springframework.stereotype.Component;
+import org.springframework.transaction.annotation.Transactional;
 import web.model.User;
 
 import javax.persistence.EntityManager;
@@ -9,6 +10,7 @@ import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Component
+@Transactional(readOnly = true)
 public class UserDaoImpl implements UserDao {
 
 
